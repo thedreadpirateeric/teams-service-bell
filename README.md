@@ -2,7 +2,7 @@
 Example service bell that does stuff
 
 
-## Install
+## Prep
 
 ### For Windows:
 
@@ -17,5 +17,18 @@ If you don’t have tkinter installed, the easiest way is to reinstall Python fr
 * Download the latest Python version from python.org.
 * During installation, ensure the "Tcl/Tk and IDLE" option is selected.
 
-Clone the repo:
+
+## Install button
+
+### Install python app
+```
+pip install git+https://github.com/thedreadpirateeric/teams-service-bell
+```
+### Update yaml file
+Update the `values.yaml` file with the teams webhook URL and the message desired.
+
+#### Run the button
+
+```
+python -m teamsservicebell
 ```

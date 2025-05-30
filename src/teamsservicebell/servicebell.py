@@ -1,12 +1,18 @@
 """Teams Service Bell."""
-import os
 import tkinter as tk
 from typing import Any, Callable
+import logging
 
 import pymsteams
 
+from .utils import _load_yaml
 
-def send_message(webhookURI: str, message: str) -> str | Callable[[], Any]:
+LOGGER = logging.getLogger("teamsservicebell")
+PREFS = _load_yaml()
+
+
+def send_message(webhookURI: str | None,
+                 message: str | None) -> str | Callable[[], Any]:
     """Send a message to a teams webook.
 
     For more advanced features, see
@@ -26,8 +32,8 @@ def send_message(webhookURI: str, message: str) -> str | Callable[[], Any]:
 
 def press_button() -> None:
     """This would be the button press action."""
-    webhookURI = os.getenv("TEAMS_WEBHOOK")
-    message = ""
+    webhookURI = PREFS.get("webhookURI")
+    message = PREFS.get("message")
     if webhookURI:
         send_message(webhookURI, message)
 

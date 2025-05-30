@@ -23,6 +23,7 @@ license-files = ["LICEN[CS]E*"]
 
 dependencies = [
   "pymsteams",
+  "pyyaml"
 ]
 
 [project.urls]
@@ -33,5 +34,6 @@ Issues = "https://github.com/thedreadpirateeric/teams-service-bell/issues"
 [[tool.mypy.overrides]]
 module = [
   "pymsteams.*",
+  "pyyaml.*"
 ]
 follow_untyped_imports = true
