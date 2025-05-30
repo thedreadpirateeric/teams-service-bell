@@ -1,2 +1,2 @@
-# teams-service-bell
+# teamsservicebell
 Example service bell that does stuff
